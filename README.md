@@ -1,9 +1,3 @@
-Voici un README :
-
----
-
-### Copiez ce contenu :
-
 ```markdown
 # Book Generator - Générateur de livres avec Ollama
 
