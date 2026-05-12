@@ -1,0 +1,20 @@
+# pip install pygooglenews
+from pygooglenews import GoogleNews
+import json
+
+gn = GoogleNews(lang='fr', country='FR') # Se mettre en France
+
+# Exemple 1 : Top stories
+top_stories = gn.top_news()
+articles = [{
+    "title": item.title,
+    "link": item.link,
+    "published": item.published
+} for item in top_stories['entries']]
+
+# Exemple 2 : Recherche par mot-clé
+search_results = gn.search('Intelligence Artificielle')
+# Même format de données
+
+news_string = json.dumps(articles, indent=2, ensure_ascii=False)
+print(news_string)
